@@ -14,6 +14,7 @@ class CANDIDATController extends Controller
         // http://127.0.0.1:8000/api/forms
         // Question 1.2.3
 
+        $request->validate(['email' => 'required', 'idée' => 'required']);
         $CANDIDAT = CANDIDAT::where('email', $request->email)->get();
 
         if (!empty($CANDIDAT[0])) {
@@ -24,8 +25,7 @@ class CANDIDATController extends Controller
                 "numéro d’ordre de dossier de candidature" => $CANDIDAT_number
             ];
         } else {
-            $request->validate(['idée' => 'required']);
-            $form = CANDIDAT::create($request->all());
+            CANDIDAT::create($request->all());
 
             return "votre idée est bien ajouter dans la base de donner";
         }
@@ -79,6 +79,7 @@ class CANDIDATController extends Controller
         $idée_Non_valid = CANDIDAT::where([['numero_dossier', $id], ['status_idée', '=', false]])->get();
 
         if (!empty($idée_Non_valid[0])) {
+
             CANDIDAT::where('numero_dossier', $id)->delete();
 
             return "l'idée invalid est bien suprimer";
@@ -94,7 +95,7 @@ class CANDIDATController extends Controller
 
         return CANDIDAT::all()->where('numero_dossier', $id);
     }
-
+    
     public function create(Request $request)
     {
         // methode GET  
