@@ -95,10 +95,5 @@ class CANDIDATController extends Controller
 
         return CANDIDAT::all()->where('numero_dossier', $id);
     }
-    
-    public function create(Request $request)
-    {
-        // methode GET  
-        // http://127.0.0.1:8000/api/forms/create
-    }
+
 }
