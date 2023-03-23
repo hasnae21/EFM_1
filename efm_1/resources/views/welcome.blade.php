@@ -860,18 +860,6 @@
         </li>
     </ul>
     </p>
-    <p>
-        NB :
-        <br>
-        ● Votre application doit affecter un numéro d’ordre de dossier pour chaque candidat
-        correspondant à sa candidature pour le Hackathon. Ce numéro doit être auto-incrément dans la
-        base de données et sera utilisé comme identifiant de la table CANDIDAT.
-        <br>
-        ● La validation des réponses avec Postman
-        <br>
-        ● La validation des réponses doit obligatoirement être démontrée au formateur surveillant pour
-        que les réponses soient considérées correctes.
-    </p>
 </body>
 
 </html>
